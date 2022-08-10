@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&display=swap');
+
+* {
+   padding: 0;
+   margin: 0;
+}
+
+body {
+   font-family: serif;
+   background-color: #FEF9A7;
+}
+
+.container {
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 300;
+   padding: 20px;
+   overflow: hidden;
+   background-color: #F77E21;
+   display: flex;
+   justify-content: space-between;
+}
+
+.container h1 {
+   float: left;
+   margin-left: 10%;
+   color: black;
+}
+
+.container ul {
+   list-style-type: none;
+   font-size: 18px;
+   margin-right: 10%;
+}
+
+.container li {
+   margin-top: 10px;
+   float: left;
+   padding: 0 20px;
+
+}
+
+.container a {
+   text-decoration: none;
+   color: black;
+
+}
+
+.current a::after {
+   content: '_';
+   background-color: rgb(241, 255, 117);
+   font-size: 4px;
+   display: block;
+
+}
+
+
+.wrapper {
+   display: grid;
+   grid-template-columns: 82% 18%;
+}
+
+.equation {
+   font-family: 'Montserrat', sans-serif;
+   font-size: 65px;
+   background-color: #FAC213;
+   border-radius: 10px;
+   text-align: center;
+   padding-top: 15%;
+   margin: 10px 10px 0 10px;
+}
+
+.equation h1 {
+   display: inline;
+   padding: 20px;
+
+}
+
+.answer-options {
+   font-family: 'Montserrat', sans-serif;
+   font-size: 67px;
+   margin-right: 10px;
+}
+
+.answer-options h1 {
+   cursor: pointer;
+   border-radius: 10px;
+   margin-top: 10px;
+   text-align: center;
+   width: 100%;
+}
+
+#option1 {
+   background-color: #FAC213;
+   transition: 1s;
+}
+
+#option1:hover {
+   color: #FAC213;
+   background-color: white;
+}
+
+#option2 {
+   background-color: #F77E21;
+   transition: 1s;
+}
+
+#option2:hover {
+   color: #F77E21;
+   background-color: white;
+}
+
+#option3 {
+   background-color: #D61C4E;
+   transition: 1s;
+}
+
+#option3:hover {
+   color: #D61C4E;
+   background-color: white;
+}
