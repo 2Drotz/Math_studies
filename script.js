@@ -13,7 +13,10 @@ let answer = 0,
 function generateEquation() {
    let num1 = Math.floor(Math.random() * 10),
       num2 = Math.floor(Math.random() * 12);
+
+
    answer = num1 + num2;
+
 
    let wrongAnswer1 = answer + 1,
       wrongAnswer2 = answer - 1;
@@ -30,19 +33,58 @@ function generateEquation() {
       item.innerHTML = allAnswer[i];
    });
 }
+
+
+function generateEquation2() {
+   let num1 = Math.floor(Math.random() * 10),
+      num2 = Math.floor(Math.random() * 12);
+
+   answer = num1 - num2;
+
+
+   let wrongAnswer1 = answer + 1,
+      wrongAnswer2 = answer - 1;
+
+   document.querySelector('#num1').innerHTML = num1;
+   document.querySelector('#num2').innerHTML = num2;
+
+   let allAnswer = [answer, wrongAnswer1, wrongAnswer2];
+   allAnswer.sort(function () {
+      return Math.floor(Math.random(allAnswer) - 0.5);
+   });
+
+   option.forEach((item, i) => {
+      item.innerHTML = allAnswer[i];
+   });
+}
+
+
 generateEquation();
+
 
 option.forEach((item) => {
 
    item.addEventListener('click', () => {
-      if (item.innerHTML == answer) {
-         generateEquation();
-         audioYes.play();
-         doneCounter();
+      if (znak.textContent == '+') {
+         if (item.innerHTML == answer) {
+            generateEquation();
+            audioYes.play();
+            doneCounter();
 
+         } else {
+            audioNo.play();
+            failCounter();
+         }
       } else {
-         audioNo.play();
-         failCounter();
+         if (item.innerHTML == answer) {
+            generateEquation2();
+            audioYes.play();
+            doneCounter();
+
+         } else {
+            audioNo.play();
+            failCounter();
+         }
       }
    });
 });
@@ -70,21 +112,28 @@ function failCounter() {
    if (failCount == 3) {
       alert('Ты проиграл!');
       fail.textContent = 0;
+      done.textContent = 0;
    }
 }
 
 
 
 
-// btnLink.forEach((item) => {
+btnLink.forEach((item) => {
 
-//    item.addEventListener('click', () => {
-//       if (item.textContent == 'Вычитание') {
-//          znak.textContent = '-';
-//          generateEquation();
-//       }
-//    });
-// });
+   item.addEventListener('click', () => {
+      if (item.textContent === 'Вычитание') {
+         generateEquation2();
+         znak.textContent = '-';
+
+      } else if (item.textContent === 'Сложение') {
+         generateEquation();
+         znak.textContent = '+';
+      }
+      fail.textContent = 0;
+      done.textContent = 0;
+   });
+});
 
 let scale = [
    {
