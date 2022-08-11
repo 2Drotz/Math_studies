@@ -7,7 +7,7 @@
 
 body {
    font-family: serif;
-   background-color: #FEF9A7;
+   background-color: #F7ECDE;
 }
 
 .container {
@@ -15,7 +15,7 @@ body {
    font-weight: 300;
    padding: 20px;
    overflow: hidden;
-   background-color: #F77E21;
+   background-color: #54BAB9;
    display: flex;
    justify-content: space-between;
 }
@@ -23,36 +23,51 @@ body {
 .container h1 {
    float: left;
    margin-left: 10%;
-   color: black;
+   color: #06283D;
 }
 
-.container ul {
-   list-style-type: none;
-   font-size: 18px;
+.link {
+   display: flex;
    margin-right: 10%;
-}
-
-.container li {
-   margin-top: 10px;
-   float: left;
-   padding: 0 20px;
 
 }
 
-.container a {
-   text-decoration: none;
-   color: black;
+.btn {
+   cursor: pointer;
+   margin: 0 5px;
+   font-size: 18px;
+   padding: 0 10px;
+   border: none;
+   background-color: transparent;
+   transition: all .4s;
+   border-radius: 20px;
+}
+
+.active {
+   background-color: #FAC213;
+}
+
+.counter {
+   border: 1px black solid;
+   display: flex;
+   color: #06283D;
+}
+
+.counter h3 {
+   width: 50%;
+   text-align: center;
 
 }
 
-.current a::after {
-   content: '_';
-   background-color: rgb(241, 255, 117);
-   font-size: 4px;
-   display: block;
-
+#done {
+   background-color: #A0D995;
+   color: white;
 }
 
+#fail {
+   background-color: #FF8B8B;
+   color: white;
+}
 
 .wrapper {
    display: grid;
@@ -62,11 +77,12 @@ body {
 .equation {
    font-family: 'Montserrat', sans-serif;
    font-size: 65px;
-   background-color: #FAC213;
+   background-color: #c1e9e9;
    border-radius: 10px;
    text-align: center;
    padding-top: 15%;
    margin: 10px 10px 0 10px;
+   color: #06283D;
 }
 
 .equation h1 {
@@ -89,32 +105,13 @@ body {
    width: 100%;
 }
 
-#option1 {
-   background-color: #FAC213;
-   transition: 1s;
+#option {
+   background-color: #9ED2C6;
+   transition: .5s;
+   color: #06283D;
 }
 
-#option1:hover {
-   color: #FAC213;
-   background-color: white;
-}
-
-#option2 {
-   background-color: #F77E21;
-   transition: 1s;
-}
-
-#option2:hover {
-   color: #F77E21;
-   background-color: white;
-}
-
-#option3 {
-   background-color: #D61C4E;
-   transition: 1s;
-}
-
-#option3:hover {
-   color: #D61C4E;
+#option:hover {
+   color: #9ED2C6;
    background-color: white;
 }
